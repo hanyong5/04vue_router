@@ -1,14 +1,26 @@
 <template>
-  <top-header/>
-  <router-view></router-view>
+  <top-header  :tshow="tshow" @tView="tshow=false"/>
+  <router-view 
+    :pdata="pdata" 
+
+  >
+  </router-view>
 </template>
 
 <script>
 import header from './components/header.vue'
+import pdata from './pdata.js'
+
 export default {
   name:'app',
   components:{
     'top-header':header,
+  },
+  data(){
+    return{
+      pdata:pdata,
+      tshow:false,
+    }
   }
 
 }

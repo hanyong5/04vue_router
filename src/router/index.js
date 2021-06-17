@@ -2,8 +2,13 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 import product from '../components/product.vue'
 import board from '../components/board.vue'
+import view404 from '../components/404.vue'
 
 const routes = [
+  {
+    path: '/:pathMatch(.*)*',
+    component: view404
+  },
   {
     path: '/',
     name: 'Home',
@@ -18,8 +23,8 @@ const routes = [
     path: '/board',
     name: 'board',
     component: board
-  }
-
+  },
+  
   
 ]
 

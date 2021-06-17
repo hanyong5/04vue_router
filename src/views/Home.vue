@@ -1,8 +1,24 @@
 <template>
- <swiper :pagination="true" class="mySwiper">
+ <swiper :pagination="true" class="mySwiper mb-5">
   <swiper-slide><img src="image/slide01.jpg" alt=""></swiper-slide>
   <swiper-slide><img src="image/slide02.jpg" alt=""></swiper-slide>
  </swiper>
+ <div class="best">
+   <div class="container">
+     <h2>best product</h2>
+     <p>Lorem ipsum dolor sit.</p>
+     <div class="row mb-5">
+       <div class="col-sm-6 col-md-3" v-for="(item,i) in 4" :key="i">
+         <img :src="pdata[i].image" alt="" class="w-100">
+         {{pdata[i].title}}
+       </div>
+     </div>
+
+     <div class="btn btn-primary m-auto d-block" style="width:100px">
+       <router-link to="/product">more</router-link>
+     </div>
+   </div>
+ </div>
 
 
 </template>
@@ -22,6 +38,7 @@ SwiperCore.use([Pagination]);
 
 
 export default {
+  props:['pdata'],
    components: {
     Swiper,
     SwiperSlide,
@@ -62,4 +79,8 @@ export default {
   height: 100%;
   object-fit: cover;
 }
+
+.best h2{text-align: center;}
+.best h2:after{content:"";width: 30px;height: 1px;background:#333;display: block;margin:10px auto;}
+.best p{text-align: center;}
 </style>

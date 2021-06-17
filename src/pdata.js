@@ -39,4 +39,20 @@ export default [{
     image: "image/1715.jpg",
     content: "더치바이크 클래식자전거",
     price: 337000
-  }]
+  },
+    {
+    id : 6,
+    title: "버킨 비비에1",
+    image: "image/1715.jpg",
+    content: "더치바이크 클래식자전거",
+    price: 337000
+  },
+  {
+  id : 7,
+  title: "버킨 비비에2",
+  image: "image/1715.jpg",
+  content: "더치바이크 클래식자전거",
+  price: 337000
+  }
+
+]
