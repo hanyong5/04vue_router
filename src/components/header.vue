@@ -1,9 +1,9 @@
 <template>
 <router-link to="/" class="navbar-brand d-none d-md-block text-center">GOGO</router-link>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light"  @mouseleave="hide">
   <router-link to="/" class="navbar-brand d-block d-md-none">GOGO</router-link>
       
-  <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" @click="$emit('tView',)">
+  <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
@@ -31,6 +31,12 @@ export default {
                 {menu:'BOARD',link:'/board'},
             ]
         }
+    },
+    methods:{
+      hide:function(){
+        //alert('mouseout');
+        document.getElementById("navbarNav").classList.remove("show")
+      }
     }
 
 }

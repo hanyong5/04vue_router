@@ -1,4 +1,5 @@
 <template>
+ 
  <swiper :pagination="true" class="mySwiper mb-5">
   <swiper-slide><img src="image/slide01.jpg" alt=""></swiper-slide>
   <swiper-slide><img src="image/slide02.jpg" alt=""></swiper-slide>
@@ -10,7 +11,7 @@
      <div class="row mb-5">
        <div class="col-sm-6 col-md-3" v-for="(item,i) in 4" :key="i">
          <img :src="pdata[i].image" alt="" class="w-100">
-         {{pdata[i].title}}
+          <p @click="$emit('pOpen',pdata[i].id)">{{pdata[i].title}}</p>
        </div>
      </div>
 
@@ -28,6 +29,7 @@ import { Swiper, SwiperSlide } from 'swiper/vue';
 import "swiper/components/pagination/pagination.min.css"
 import 'swiper/swiper.scss';
 
+
 // import Swiper core and required modules
 import SwiperCore, {
   Pagination
@@ -43,6 +45,11 @@ export default {
     Swiper,
     SwiperSlide,
   },
+  data(){
+    return{
+      //pfiew:true
+    }
+  }
 }
 </script>
 
